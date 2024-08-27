@@ -11,7 +11,6 @@ class TodoController extends Controller
     {
         $todo = new Todo();
         $todos = $todo->all();
-
         return view('todo.index', ['todos' => $todos]);
         
     }
@@ -25,7 +24,8 @@ class TodoController extends Controller
     public function store(Request $request)
     {
         $inputs = $request->all();
-    
+        dd($inputs);
+
         $todo = new Todo();
         $todo->fill($inputs);
         $todo->save();
